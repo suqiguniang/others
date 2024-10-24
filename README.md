@@ -33,3 +33,23 @@ pve的又一种脚本
 unrar.sh
 配合crontab自动解压文件并删除文件
 ```
+
+```
+pve核显直通文件
+n100 pve igd gop rom文件
+```
+```
+docker run -d \
+    --name aria2-pro \
+    --restart unless-stopped \
+    --log-opt max-size=1m \
+    -e PUID=$UID \
+    -e PGID=$GID \
+    -e RPC_PORT=6800 \
+    -p 6800:6800 \
+    -e LISTEN_PORT=6888 \
+    -p 6888:6888 \
+    -p 6888:6888/udp \
+    p3terx/aria2-pro
+```
+
